@@ -1,5 +1,4 @@
 @extends('Layouts.master')
-
 @section('content')
 <h1>Daftar Kategori</h1>
 <hr>
@@ -46,5 +45,4 @@
         </div>
     </div>
 </div>
-
 @endsection
