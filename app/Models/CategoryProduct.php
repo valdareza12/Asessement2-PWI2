@@ -1,69 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-use App\Models\CategoryProduct;
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 
-class CategoryController extends Controller
+class CategoryProduct extends Model
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $data_kategori = CategoryProduct::paginate(5);
-
-        return view('Pages.Category.show', [
-            'kategori' => $data_kategori
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    // inisialisasi tabel category_product
+    protected $table = 'category_product';
+    // inisialisasi primary key di dalam tabel
+    protected $primaryKey = 'id_category';
+    // inisialisasi kolom yang TIDAK dapat diisi secara massal
+    protected $guarded = ['id_category'];
 }
